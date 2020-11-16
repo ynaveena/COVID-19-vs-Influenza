@@ -4,7 +4,7 @@ warnings.filterwarnings('ignore')
 
 train=pd.read_csv("CPosvCNeg_Train_80_Factorized_Final.csv")
 train.drop(['Season'], axis=1,inplace=True)
-print("shape",train.shape)
+print("Train shape",train.shape)
 
 
 X_train=train.iloc[:,1:-1]
@@ -13,7 +13,7 @@ y_train=train.iloc[:,-1]
 
 test=pd.read_csv("CPosvCNeg_Test_20_Factorized_Final.csv")
 test.drop(['Season'], axis=1,inplace=True)
-print("shape",test.shape)
+print("Test shape",test.shape)
 
 
 X_test=test.iloc[:,1:-1]
@@ -38,11 +38,11 @@ model.fit(X_train, y_train,sample_weight=compute_sample_weight("balanced", y_tra
 y_pred=model.predict(X_test)
 
 
-print(metrics.accuracy_score(y_test, y_pred))
+print("Accuracy",metrics.accuracy_score(y_test, y_pred))
 print(metrics.confusion_matrix(y_test,y_pred))
 print(metrics.classification_report(y_test,y_pred))
 
-print(metrics.f1_score(y_test, y_pred))
+print("f1-score",metrics.f1_score(y_test, y_pred))
 cf_matrix=metrics.confusion_matrix(y_test,y_pred)
 sns.heatmap(cf_matrix, annot=True,cmap='Blues')
 

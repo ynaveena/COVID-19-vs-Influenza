@@ -5,9 +5,9 @@ warnings.filterwarnings('ignore')
 
 train=pd.read_csv("3Class_Train_80_Factorized_Final.csv")
 train.drop(['Season'], axis=1,inplace=True)
-print(train.shape)
+
 train = train[train.Class != 2]
-print("shape",train.shape)
+print("Train Shape",train.shape)
 
 
 X_train=train.iloc[:,1:-1]
@@ -16,9 +16,9 @@ y_train=train.iloc[:,-1]
 
 test=pd.read_csv("3Class_Test_20_Factorized_Final.csv")
 test.drop(['Season'], axis=1,inplace=True)
-print(test.shape)
+
 test = test[test.Class != 2]
-print("shape",test.shape)
+print("Test Shape",test.shape)
 
 
 X_test=test.iloc[:,1:-1]
@@ -39,11 +39,11 @@ model.fit(X_train, y_train,sample_weight=compute_sample_weight("balanced", y_tra
 y_pred=model.predict(X_test)
 
 
-print(metrics.accuracy_score(y_test, y_pred))
+print("Accuracy",metrics.accuracy_score(y_test, y_pred))
 print(metrics.confusion_matrix(y_test,y_pred))
 print(metrics.classification_report(y_test,y_pred))
 
-print(metrics.f1_score(y_test, y_pred))
+print("F1 Score",metrics.f1_score(y_test, y_pred))
 cf_matrix=metrics.confusion_matrix(y_test,y_pred)
 sns.heatmap(cf_matrix, annot=True,cmap='Blues')
 
@@ -59,5 +59,3 @@ shap.initjs()
 explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(test.drop(['PATID', 'Class'], axis=1))
 f = shap.summary_plot(shap_values, test.drop(['PATID', 'Class'], axis=1))
-
-
