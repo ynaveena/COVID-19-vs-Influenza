@@ -45,6 +45,24 @@ Note: On some systems, you may have to use `pip3` instead.
 
 ### Running the Code
 
-## LICENSE
+To use the notebooks, simply start up a Jupyter server using the command below.
+
+```bash
+jupyter notebook
+```
+
+Our code is also available as Python scripts. To use them, follow the instructions below.
 
 ## Citation
+
+If you use the code and models provided in this repository, please do cite us.
+
+```
+@misc{covid19vsinfluenza,
+  title = {COVID 19 vs Influenza},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub Repository},
+  howpublished = {\url{https://github.com/ynaveena/COVID-19-vs-Influenza}}
+}
+```
