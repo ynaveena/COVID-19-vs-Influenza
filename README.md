@@ -9,6 +9,48 @@ This repository contains code and ML models used for distinguishing between COVI
 * Others vs Influenza
 * Influenza vs COVID-19
 
+## Data
+
+The columns present in the dataset (in order) are:
+
+* `sex_F` – 1 if Female, 0 if otherwise
+
+* `race_White` – 1 if White, 0 otherwise
+
+* `race_AA` – 1 if African American, 0 otherwise
+
+* `race_Other` – 1 if neither White nor African American, 0 otherwise
+
+* `ethnicity_Hispanic_YN` – 1 if Hispanic or Latino, 0 otherwise
+
+* `Age` – Age in years (integer)
+
+* `patient_class`
+
+* `encounter_type`
+
+* `reason_for_visit`
+
+* `SBP` – Systolic BP
+
+* `DBP` – Diastolic BP
+
+* `Temp_C` – Temperature in ºC
+
+* `HR` – Heart Rate
+
+* `RR` – Respiratory Rate
+
+* `SPO2` – Blood Oxygen (SpO_2)
+
+* `BMI`
+
+* `BSA`
+
+* `Month` – Month (integer) 0 - 11
+
+* `Class` – Ground Truth
+
 ## Instructions
 
 To run the code, ensure you have Python installed. All our code was written in Python 3.8.0, but should be backwards-compatible to some earlier versions of Python 3. Follow the instructions below to get started.

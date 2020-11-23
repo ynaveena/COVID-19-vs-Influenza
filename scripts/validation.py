@@ -26,4 +26,5 @@ for model in models:
   print(title)
   data = pd.read_csv(f"data/{model}_Sample_Validation.csv")
   model = pickle.load(open(f"models/{model}.pkl", 'rb'))
-  print(skm.classification_report(data['Class'], model.predict(data.drop('Class', axis=1))))
+  print(skm.classification_report(
+      data['Class'], model.predict(data.drop('Class', axis=1))))
