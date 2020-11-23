@@ -5,9 +5,9 @@ This repository contains code and ML models used for distinguishing between COVI
 ## Models
 
 * Influenza vs COVID-19 Positive vs COVID-19 Negative
-* COVID-19 Positive vs COVID-19 Negative
-* Influenza vs Others
-* COVID-19 vs Influenza
+* COVID-19 Negative vs COVID-19 Positive
+* Others vs Influenza
+* Influenza vs COVID-19
 
 ## Instructions
 
@@ -52,6 +52,25 @@ jupyter notebook
 ```
 
 Our code is also available as Python scripts. To use them, follow the instructions below.
+
+#### Sample Validation
+
+Run the command given below from the root of the repository to validate the models on sample data.
+
+```bash
+python scripts/validation.py [MODELS]
+# For help: python scripts/validation.py --help
+```
+
+`[MODELS]` can either be empty (this would mean all 4 models are validated) or a space-separated list of specific models to validate. The arguments can be specified as follows:
+
+* `3Class` – Influenza vs COVID-19 Positive vs COVID-19 Negative
+
+* `CPosvCNeg` – COVID-19 Negative vs COVID-19 Positive
+
+* `FvOthers` – Others vs Influenza
+
+* `FvC` – Influenza vs COVID-19
 
 ## Citation
 
